@@ -96,4 +96,10 @@ class _SplashPageState extends State<SplashPage> {
       ),
     );
   }
+
+  @override
+  void dispose() {
+    _disposers.forEach((disposer) => disposer());
+    super.dispose();
+  }
 }
