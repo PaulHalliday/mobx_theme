@@ -1,8 +1,9 @@
+/// lib/application/theme/services/theme_service.dart
 import 'package:flutter/material.dart';
 import 'package:mobx_theme/domain/theme/interfaces/i_theme_repository.dart';
 
 class ThemeService {
-  ThemeService({@required IThemeRepository themeRepository})
+  ThemeService(IThemeRepository themeRepository)
       : _themeRepository = themeRepository;
 
   IThemeRepository _themeRepository;
@@ -10,6 +11,7 @@ class ThemeService {
   ThemeData get lightTheme => ThemeData(
         primarySwatch: Colors.teal,
         accentColor: Colors.deepPurpleAccent,
+        brightness: Brightness.light,
         scaffoldBackgroundColor: Color(0xFFecf0f1),
         visualDensity: VisualDensity.adaptivePlatformDensity,
       );

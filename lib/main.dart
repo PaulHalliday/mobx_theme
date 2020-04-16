@@ -3,7 +3,7 @@ import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:mobx_theme/application/theme/services/theme_service.dart';
 import 'package:mobx_theme/application/theme/store/theme_store.dart';
 import 'package:mobx_theme/infrastructure/theme/datasources/theme_repository.dart';
-import 'package:mobx_theme/presentation/pages/splash_screen.dart';
+import 'package:mobx_theme/presentation/pages/splash_page.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -17,8 +17,7 @@ class MyApp extends StatelessWidget {
       providers: [
         Provider<ThemeStore>(
             create: (_) =>
-                ThemeStore(ThemeService(themeRepository: ThemeRepository()))
-                  ..getTheme())
+                ThemeStore(ThemeService(ThemeRepository()))..getTheme())
       ],
       child: Consumer<ThemeStore>(
         builder: (_, ThemeStore value, __) => Observer(

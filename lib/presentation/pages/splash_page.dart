@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -69,12 +70,13 @@ class _SplashPageState extends State<SplashPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
-            SvgPicture.asset(
-              themeStore.isDark
-                  ? AssetKeys.FOOD_DARK_SVG
-                  : AssetKeys.FOOD_LIGHT_SVG,
-              height: 200,
-            ),
+            if (!kIsWeb)
+              SvgPicture.asset(
+                themeStore.isDark
+                    ? AssetKeys.FOOD_DARK_SVG
+                    : AssetKeys.FOOD_LIGHT_SVG,
+                height: 200,
+              ),
             SizedBox(
               height: 20,
             ),
