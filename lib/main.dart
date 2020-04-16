@@ -24,7 +24,7 @@ class MyApp extends StatelessWidget {
         builder: (_, ThemeStore value, __) => Observer(
           builder: (_) => MaterialApp(
             debugShowCheckedModeBanner: false,
-            title: 'Flutter Demo',
+            title: 'MobX Theme Switcher',
             theme: value.theme,
             home: SplashPage(),
           ),
